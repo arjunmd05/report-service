@@ -5,13 +5,8 @@ import { ReportsService } from './reports.service';
 export class ReportsController {
   constructor(private readonly reportsService: ReportsService) {}
 
-  @Get('users')
-  getUsers() {
-    return this.reportsService.getUsersReport();
-  }
-
-  @Get('summary')
-  getSummary() {
-    return this.reportsService.getSummary();
+  @Get('users/send')
+  sendUsersReport() {
+    return this.reportsService.generateAndSendUsersReport();
   }
 }
